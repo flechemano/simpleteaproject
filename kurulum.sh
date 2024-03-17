@@ -1,5 +1,5 @@
 #!/bin/bash
-
+apt install jq
 sudo apt update -y && sudo apt upgrade -y
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
