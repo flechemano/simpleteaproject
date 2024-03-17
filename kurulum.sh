@@ -98,6 +98,7 @@ echo "Updated package.json successfully."
 chmod +x "$0"
 
 npm install 
+npm doctor
 npm audit fix --force 
 
 
