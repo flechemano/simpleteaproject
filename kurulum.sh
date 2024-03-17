@@ -25,6 +25,7 @@ read -p "Enter GitHub username: " github_username
 read -p "Enter project name: " project_name
 read -p "Enter homepage URL: " homepage_url
 read -p "Enter author's name: " author_name
+read -p "Enter your mail addres: " mail_address
 
 read -p "SSH key icin herhangi bir isim (e.g., 'my_key'): " key_name
 ssh-keygen -t rsa -b 4096 -C "$github_username" -f ~/.ssh/$key_name
@@ -41,7 +42,8 @@ read -p "Public keyi githuba ekledikten sonra Enter e basın..."
 git clone "$repo_url"
 cd "${repo_url##*/}"
 rm -rf .git .github package-lock.json
-
+git config --global user.email "$mail_address"
+git config --global user.name "$github_username"
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
